@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+<body>
+  <%- include('../partials/header.ejs') %>
+
+  <main class="px-4 h-full w-full">
+    <section class="flex flex-col items-center pt-4 pb-4">
+      <article class="text-justify">
+        <h1 class="text-center text-4xl text-gray-900 uppercase">
+          All blogs
+        </h1>
+        <div class="w-full h-full">
+          <% if(blogs.length > 0){ %>
+          <% blogs.forEach(blog => { %>
+          <a class="flex flex-col justify-between items-center bg-white hover:shadow-md transition-all transition-linear duration-1000 px-4 py-8 my-4 cursor-pointer border border-gray-200"
+            href="/blogs/<%= blog._id %>">
+            <h3 class="text-gray-800 uppercase text-xl font-bold px-2 py-4">
+              <%= blog.title %>
+            </h3>
+            <p class="text-gray-600 text-lg text-justify">
+              <%= blog.snippet %>
+            </p>
+          </a>
+          <% }) %>
+          <% } else { %>
+          <p class="text-gray-900 font-bold text-4xl">
+            No Blogs Available
+          </p>
+          <% } %>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

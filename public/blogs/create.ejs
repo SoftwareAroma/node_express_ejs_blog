@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main class="px-4 h-full w-full py-8">
+        <form class="flex w-54 bg-white shadow-md px-4 py-8 flex-col justify-between items-center" action="/blogs" method="post">
+            <div class="grid w-full grid-cols-4 my-2 items-center">
+                <label class="col-span-1 text-gray-700 text-2xl" for="title">Title</label>
+                <input id="title" type="text" class="col-span-3 bg-transparent focus:outline-none border-gray-200 px-2 py-1 border mx-4" type="text"
+                    placeholder="" name="title" type="text" />
+            </div>
+            <div class="w-full grid grid-cols-4 my-2 items-center">
+                <label class="col-span-1 text-gray-700 text-2xl" for="snippet">Snippet</label>
+                <input id="snippet" class="col-span-3 bg-transparent focus:outline-none border-gray-200 px-2 py-1 border mx-4" type="text"
+                    placeholder="" name="snippet" type="text" />
+            </div>
+            <div class="w-full grid grid-cols-4 my-2 items-center">
+                <label class="col-span-1 text-gray-700 text-2xl" for="body">Body</label>
+                <textarea id="body" name="body" rows="6" class="col-span-3 bg-transparent focus:outline-none border-gray-200 px-2 py-1 border mx-4"
+                    type="text" placeholder="" type="text">
+                </textarea>
+            </div>
+            <button type="submit" class="bg-blue-500 mt-4 text-gray-100 px-4 py-2 uppercase focus:outline-none">
+                create blog
+            </button>
+        </form>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main class="px-4 py-8 flex flex-col justify-between items-center">
+        <h2 class="text-gray-900 border-b-2 uppercase font-bold text-4xl">
+            <%= blog.title  %>
+        </h2>
+        <div class="flex justfy-center items-center">
+            <p class="text-justify px-4 py-2 text-gray-700 text-2xl">
+                <%= blog.body %>
+            </p>
+        </div>
+        <button class="delete focus:outline-none bg-red-500 mt-4 text-gray-100 uppercase px-4 py-2" data-doc="<%= blog._id %> ">
+            delete
+        </button>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+<!-- custom frontend javascript -->
+<script src="/js/script.js"></script>
+
+</html>
