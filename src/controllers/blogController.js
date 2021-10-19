@@ -20,8 +20,10 @@ const blog_details = (request, response) => {
             title: "Blog Details",
             blog: blog,
         });
-    }).catch((error) => {
-        console.log("There was an error", error);
+    }).catch(() => {
+        response.status(404).render('404', {
+            title: "Blog not found"
+        });
     });
 }
 
